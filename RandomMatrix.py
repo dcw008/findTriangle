@@ -2,7 +2,7 @@ import random
 import time
 import FindTriangle
 
-def createBPMatrix(n):
+def createRandomMatrix(n):
 	# create a matrix and set all values of the matrix to 0
 	randomMatrix = [[0 for x in range(n)] for y in range(n)]
 	for i, row in enumerate(randomMatrix):
@@ -19,7 +19,7 @@ def printMatrix(G):
 	print('\n'.join([''.join(['{:4}'.format(item) for item in row]) for row in G]))
 
 
-G = createBPMatrix(256)
+G = createRandomMatrix(256)
 start = time.time()
 for i in range(0, 10000):
 	FindTriangle.findTriangle(G)
