@@ -1,4 +1,5 @@
 import random
+import time
 
 def createRandomMatrix(n):
 	# create a matrix and set all values of the matrix to 0
@@ -16,5 +17,8 @@ def createRandomMatrix(n):
 def printMatrix(G):
 	print('\n'.join([''.join(['{:4}'.format(item) for item in row]) for row in G]))
 
-
+start = time.time()
 printMatrix(createRandomMatrix(4))
+end = time.time()
+
+print(end-start)
