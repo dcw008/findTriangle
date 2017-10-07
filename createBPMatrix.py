@@ -9,18 +9,31 @@ import FindTriangle
 
 def createBPMatrix(n):
 	# create a matrix and set all values of the matrix to 0
-	randomMatrix = [[0 for x in range(n)] for y in range(n)]
-	for i, row in enumerate(randomMatrix):
-		for j, col in enumerate(randomMatrix):
+	bpMatrix = [[0 for x in range(2*n)] for y in range(2*n)]
+	symetricSet = set()
+	for i, row in enumerate(bpMatrix):
+		for j, col in enumerate(bpMatrix):
 			matrixRand = random.random()
-
-			if matrixRand >= 0.5:
-				randomMatrix[i][j] = 1
+			if(i == j):
+				bpMatrix[i][j] = 0
+				continue
+			if (j, i) in symetricSet:
+				continue
+			if((i < n and j > n) or (i > n and j < n)):
+				if matrixRand >= 0.5:
+					bpMatrix[i][j] = 1
+					bpMatrix[j][i] = 1
+					symetricSet.add((i,j))
+				else:
+					bpMatrix[i][j] = 0
+					bpMatrix[j][i] = 0
+					symetricSet.add((i,j))
 			else:
-				randomMatrix[i][j] = 0
-	return randomMatrix
+				bpMatrix[i][j] = 0
+	return bpMatrix
 
 def printMatrix(G):
 	print('\n'.join([''.join(['{:4}'.format(item) for item in row]) for row in G]))
+
 
 
