@@ -13,8 +13,9 @@ def createRandomMatrix(n):
 	for i, row in enumerate(randomMatrix):
 		for j, col in enumerate(randomMatrix):
 			matrixRand = random.random()
-			if j == i:
+			if(i == j):
 				randomMatrix[i][j] = 0
+				continue
 			if (j, i) in symmetricSet:
 				continue
 			else:
@@ -31,5 +32,9 @@ def createRandomMatrix(n):
 
 def printMatrix(G):
 	print('\n'.join([''.join(['{:4}'.format(item) for item in row]) for row in G]))
+
+
+
+
 
 
