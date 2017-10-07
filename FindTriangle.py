@@ -1,8 +1,10 @@
-
+import time
+import random
 #Given a graph G in the form of a adjacency matrix, determine if the Graph contains a triangle.
 
 
 testMatrix = [[0,1,0,0,1], [1,0,1,0,1], [0,1,0,1,0], [0,0,1,0,1], [0,1,0,1,0]]
+
 
 #This algorithm uses a bucketing approach such that we will process the entire matrix and add edges into buckets.
 #We only add buckets to our bucket list if a bucket has at least 2 edges because in order to form a triangle, a bucket
@@ -10,6 +12,8 @@ testMatrix = [[0,1,0,0,1], [1,0,1,0,1], [0,1,0,1,0], [0,0,1,0,1], [0,1,0,1,0]]
 #we iterate through each bucket and for each pair of edges we check if there an edge exists (v,w) by checking our matrix
 #If there is, return true. Else, return false
 def findTriangle(G):
+    start = time.time()
+    print("Searching for triangle . . .")
 
     #a list of all the buckets
     allBuckets = []
@@ -47,7 +51,12 @@ def findTriangle(G):
             u = firstEdge[1]
             v = secondEdge[1]
             if(G[u][v] == 1):
+                end = time.time()
+                print(end - start)
                 return True
+
+    end = time.time()
+    print(end - start)
     return False
 
 print(findTriangle(testMatrix))
