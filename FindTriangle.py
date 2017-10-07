@@ -4,6 +4,7 @@ import random
 
 
 testMatrix = [[0,1,0,0,1], [1,0,1,0,1], [0,1,0,1,0], [0,0,1,0,1], [0,1,0,1,0]]
+bpMatrix = [[0,0,1,0,1], [0,0,0,1,0], [0,0,1,1,1], [1,1,0,0,0], [0,1,0,0,0]]
 
 
 #This algorithm uses a bucketing approach such that we will process the entire matrix and add edges into buckets.
@@ -59,5 +60,5 @@ def findTriangle(G):
     print(end - start)
     return False
 
-print(findTriangle(testMatrix))
+print(findTriangle(bpMatrix))
 
