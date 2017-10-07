@@ -31,7 +31,7 @@ def findTriangle(G):
             if((j, i) in symmetricSet):
                 continue
             else:
-                if(G[i][j] == 1):
+                if(G[i][j] == 1): 
                     #append the edge (u,v) to the bucket list
                     bucket.append((i, j))
                     #add the edge to the set
