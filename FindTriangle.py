@@ -4,7 +4,7 @@ import random
 
 
 testMatrix = [[0,1,0,0,1], [1,0,1,0,1], [0,1,0,1,0], [0,0,1,0,1], [0,1,0,1,0]]
-bpMatrix = [[0,0,1,0,1], [0,0,0,1,0], [0,0,1,1,1], [1,1,0,0,0], [0,1,0,0,0]]
+bpMatrix = [[0,0,1,0],[0,0,1,1], [1,1,0,0], [0,1,0,0]]
 
 
 #This algorithm uses a bucketing approach such that we will process the entire matrix and add edges into buckets.
@@ -40,15 +40,20 @@ def findTriangle(G):
         #iterate through the bucket to find a triangle
         if(len(bucket) >= 2):
             allBuckets.append(bucket)
-
+    print ("Number of buckets with size greater than 2 is: " + str(len(allBuckets)))
     #process the buckets to find the triangles
     for bucket in allBuckets:
         # print(bucket)
         #for given nodes (u,v) and (u,w) try to find (v,w)
         it = iter(bucket)
+        print(len(bucket))
         for edge in it:
             firstEdge = edge
+            print("First vertex in first edge is " + str(firstEdge[0]) + "\n")
+            print("Second vertex in first edge is " + str(firstEdge[1]) + "\n")
             secondEdge = next(it)
+            print("First vertex in second edge is " + str(secondEdge[0]) + "\n")
+            print("Second vertex in second edge is " + str(secondEdge[1]) + "\n")
             u = firstEdge[1]
             v = secondEdge[1]
             if(G[u][v] == 1):
@@ -59,6 +64,4 @@ def findTriangle(G):
     end = time.time()
     print(end - start)
     return False
-
-print(findTriangle(bpMatrix))
 

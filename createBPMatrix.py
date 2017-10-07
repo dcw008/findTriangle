@@ -19,7 +19,7 @@ def createBPMatrix(n):
 				continue
 			if (j, i) in symetricSet:
 				continue
-			if((i < n and j > n) or (i > n and j < n)):
+			if((i < n and j >= n) or (i >= n and j < n)):
 				if matrixRand >= 0.5:
 					bpMatrix[i][j] = 1
 					bpMatrix[j][i] = 1
