@@ -40,7 +40,7 @@ def findTriangle(G):
         #iterate through the bucket to find a triangle
         if(len(bucket) >= 2):
             allBuckets.append(bucket)
-    print ("Number of buckets with size greater than 2 is: " + str(len(allBuckets)))
+    # print ("Number of buckets with size greater than 2 is: " + str(len(allBuckets)))
     #process the buckets to find the triangles
     
     for bucket in allBuckets:
