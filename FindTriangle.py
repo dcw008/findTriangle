@@ -13,8 +13,8 @@ bpMatrix = [[0,1,1,1],[1,0,0,1], [1,0,0,1], [1,1,1,0]]
 #we iterate through each bucket and for each pair of edges we check if there an edge exists (v,w) by checking our matrix
 #If there is, return true. Else, return false
 def findTriangle(G):
-    start = time.time()
-    print("Searching for triangle . . .")
+    #start = time.time()
+    # print("Searching for triangle . . .")
 
     #a list of all the buckets
     allBuckets = []
@@ -64,10 +64,10 @@ def findTriangle(G):
                     v = second_edge[1]
                     # do triangle check
                     if(G[u][v] == 1):
-                        end = time.time()
+                        #end = time.time()
                         return True 
-    end = time.time()
-    print(end - start)
+    #end = time.time()
+    # print(end - start)
     return False
 
 def printMatrix(G):
