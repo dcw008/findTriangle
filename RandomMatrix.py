@@ -34,9 +34,7 @@ def printMatrix(G):
 	print('\n'.join([''.join(['{:4}'.format(item) for item in row]) for row in G]))
 
 
-G = createRandomMatrix(4)
-printMatrix(G)
-FindTriangle.findTriangle(G)
+
 
 
 
